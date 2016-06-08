@@ -16,8 +16,7 @@ function foldexpr#apply_settings()
     endif
 
     " check that a foldmethod for that filetype exists
-    let path = 'foldexpr/' . &filetype . '.vim'
-    if ! filereadable(s:autoload . path)
+    if ! filereadable(s:autoload . 'foldexpr/' . &filetype . '.vim')
         return
     endif
 
