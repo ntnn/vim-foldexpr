@@ -1,6 +1,6 @@
 let s:header = '^[A-Z\s]\+'
 
-function foldexpr#man#fold()
+function! foldexpr#man#fold()
     let l = getline(v:lnum)
     let nl = getline(v:lnum + 1)
 

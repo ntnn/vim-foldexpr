@@ -4,7 +4,7 @@
 " License:	MIT
 " Website:	https://github.com/ntnn/vim-foldexpr
 
-function s:header_level(string) abort
+function! s:header_level(string) abort
     " Returns the header level a given string would have
     return strchars(matchstr(a:string, '\v^#+'))
     "      |        |                   +- 'match all leading pounds'
@@ -12,7 +12,7 @@ function s:header_level(string) abort
     "      + count the number of characters in given string
 endfunction
 
-function foldexpr#markdown#fold()
+function! foldexpr#markdown#fold()
     let l:curline = getline(v:lnum)
     let l:last_foldlevel = foldlevel(line('.') - 1)
 

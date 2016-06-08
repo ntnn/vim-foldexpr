@@ -20,7 +20,7 @@ let s:folds = [
             \ 'subparagraph',
             \ ]
 
-function foldexpr#tex#fold()
+function! foldexpr#tex#fold()
     let l = getline(v:lnum)
     let nl = getline(v:lnum +  1)
 

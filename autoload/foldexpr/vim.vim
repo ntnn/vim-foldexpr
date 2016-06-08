@@ -14,7 +14,7 @@ let s:blockend = printf('%s(end(if|for|while|%s)|%s\sEND)', s:space, s:function,
 let s:openbraces = '\v(\(|\{|\[)$'
 let s:closebraces = s:space . '\\\s+(\)|\}|\])'
 
-function foldexpr#vim#fold()
+function! foldexpr#vim#fold()
     let pl = getline(v:lnum - 1)
     let l = getline(v:lnum)
     let nl = getline(v:lnum + 1)

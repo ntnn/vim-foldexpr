@@ -11,7 +11,7 @@ let s:fold_doc_end = '\*/'
 let s:fold_doc_oneline = s:fold_doc_start . '.*' . s:fold_doc_end
 let s:fold_typedef = 'typedef .* {'
 
-function foldexpr#c#fold()
+function! foldexpr#c#fold()
     let pl = getline(v:lnum - 1)
     let l = getline(v:lnum)
     let nl = getline(v:lnum + 1)
@@ -46,7 +46,7 @@ function foldexpr#c#fold()
     return '='
 endfunction
 
-function foldexpr#c#text()
+function! foldexpr#c#text()
     let l = getline(v:foldstart)
 
     if l =~ s:fold_typedef && l !~ ';$'

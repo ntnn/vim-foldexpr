@@ -9,7 +9,7 @@ let s:docstring_oneline = '""".*"""$'
 let s:docstring_start = '""".\+'
 let s:docstring_end = '"""$'
 
-function foldexpr#python#fold()
+function! foldexpr#python#fold()
     let pl = getline(v:lnum - 1)
     let plind = indent(v:lnum - 1)
     let l = getline(v:lnum)
@@ -55,7 +55,7 @@ function foldexpr#python#fold()
     return '='
 endfunction
 
-function foldexpr#python#text()
+function! foldexpr#python#text()
     let l = v:foldstart
 
     while getline(l) =~ s:decorator && l != v:foldend
