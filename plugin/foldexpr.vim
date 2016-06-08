@@ -19,6 +19,8 @@ if ! get(g:, 'foldexpr_text_disabled', 0)
     let g:foldexpr_text_disabled = []
 endif
 
+filetype on
+
 aug foldexpr
     au!
     au FileType * call foldexpr#apply_settings()
