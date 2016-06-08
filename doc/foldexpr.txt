@@ -1,0 +1,61 @@
+*foldexpr.txt*	For Vim Version 7.4 and up
+
+			VIM-FOLDEXPR DOCUMENTATION by Nelo-T. Wallus
+
+Help on using vim-foldexpr                                          *foldexpr*
+
+    1. Introduction ............................... |foldexpr-intro|
+    2. Configuration .............................. |foldexpr-configuration|
+
+==============================================================================
+ 1. INTRODUCTION                                                *foldexpr-intro*
+
+vim-foldexpr adds folding expressions for various 'filetype's.
+
+While there is |fold-syntax|, it can be slow and is often non-existent, since
+it relies on the "fold" argument on the syntax groups (see |:syn-fold|).
+
+Also, some filetypes require special expressions for 'foldtext'. The default
+might be enough for, but sometimes the first line of the fold is not giving
+the required information.
+
+Example: >
+    @decorator
+    def method():
+        return 1
+<would turn into this fold: >
+    +-- 3 lines: @decorator
+<which doesn't yield much information on its contents.
+
+==============================================================================
+ 2. CONFIGURATION                                       *foldexpr-configuration*
+
+Available options:
+    foldexr_ft_disabled ....................... |'foldexpr_ft_disabled'|
+    foldexr_fold_disabled ..................... |'foldexpr_fold_disabled'|
+    foldexr_text_disabled ..................... |'foldexpr_text_disabled'|
+
+------------------------------------------------------------------------------
+                                                         *'foldexpr_ft_disabled'*
+Value: list ~
+Default: unset ([]) ~
+
+List of filetypes where neither 'foldexpr' nor 'foldtext' should be set by
+vim-foldexpr.
+
+------------------------------------------------------------------------------
+                                                       *'foldexpr_fold_disabled'*
+Value: list ~
+Default: unset ([]) ~
+
+List of filetypes where 'foldexpr' should not be set by vim-foldexpr.
+
+------------------------------------------------------------------------------
+                                                       *'foldexpr_text_disabled'*
+Value: list ~
+Default: unset ([]) ~
+
+List of filetypes where 'foldtext' should not be set by vim-foldexpr.
+
+
+ vim:tw=78:ts=8:ft=help:norl:
