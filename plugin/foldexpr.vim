@@ -19,6 +19,12 @@ if ! get(g:, 'foldexpr_text_disabled', 0)
     let g:foldexpr_text_disabled = []
 endif
 
+if ! get(g:, 'foldexpr_ft_equivalent', 0)
+    let g:foldexpr_ft_equivalent = {
+                \ 'go': 'c'
+                \ }
+endif
+
 filetype on
 
 aug foldexpr

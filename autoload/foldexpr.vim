@@ -15,12 +15,14 @@ function foldexpr#apply_settings()
         return
     endif
 
+    " lookup filetype for equivalents, if not defined use filetype
+    let ft = get(g:foldexpr_ft_equivalent, &filetype, &filetype)
+    let prefix = 'foldexpr#' . ft . '#'
+
     " check that a foldmethod for that filetype exists
-    if ! filereadable(s:autoload . 'foldexpr/' . &filetype . '.vim')
+    if ! filereadable(s:autoload . 'foldexpr/' . ft . '.vim')
         return
     endif
-
-    let prefix = 'foldexpr#' . &filetype . '#'
 
     if index(g:foldexpr_fold_disabled, &filetype) == -1
         setl foldmethod=expr
